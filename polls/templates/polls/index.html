@@ -1,9 +1,12 @@
+{% load static %}
 {% if lastest_question_list%}
+<link rel="stylesheet" href="{% static 'css/style.css' %}"
 
 <ul>
     {% for question  in  lastest_question_list %}
     <li>
         <a href="{% url 'polls:detail' question.id %}">{{question.questions_text}}</a>
+        <a href ="hotmail.com">mi correo</a>
     </li>
     {% endfor %}
 </ul>
