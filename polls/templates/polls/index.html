@@ -1,6 +1,46 @@
 {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <title>Premios Platzi App</title>
+</head>
+<body>
+    <header>
+        <h1>Premios Platzi App</h1>
+    </header>
+    <main>
+        {% if lastest_question_list%}
+            <link rel="stylesheet" href="{% static 'css/style.css' %}"
+                <ul>
+                    {% for question  in  lastest_question_list %}
+                        <li>
+                            <a href="{% url 'polls:detail' question.id %}">{{question.questions_text}}</a>
+                           
+                        </li>
+                    {% endfor %}
+                </ul>
+        {% else %}
+                <p>No existen encuestas </p>
+            {% endif %}
+    </main>
+    <footer>
+        <a href ="hotmail.com">mi correo</a>
+        <a href =#>Telefono</a>
+        <a href =#>Ubicación</a>
+    </footer>
+    
+</body>
+</html>
+
+
+<!--{% load static %}
 {% if lastest_question_list%}
-<link rel="stylesheet" href="{% static 'css/style.css' %}"
+<link rel="stylesheet" href="{% static 'css/style.css' %}"/>
 
 <ul>
     {% for question  in  lastest_question_list %}
@@ -12,4 +52,4 @@
 </ul>
 {% else %}
     <p>No existen encuestas </p>
-{% endif %}
+{% endif %}-->
